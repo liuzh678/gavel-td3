@@ -13,11 +13,9 @@
 #method .paper-figure.wide { display: none; }
 #method .pipeline-grid { border-top: 1px solid var(--line); padding-top: 30px; margin-top: 24px; }
 .action-button.muted { color: #7c8994; background: #f5f7f8; border-color: #dce3e8; cursor: default; }
-.video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1060px; margin: auto; }
-.video-grid figure { margin: 0; }
-.video-grid video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #172b3d; border: 1px solid var(--line); border-radius: 5px; }
-.video-grid figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 600; text-align: center; }
-.video-note { color: var(--muted); font-size: 13px; margin: 22px 0 0; text-align: center; }
+.featured-video { max-width: 960px; margin: 0 auto; }
+.featured-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #172b3d; border: 1px solid var(--line); border-radius: 5px; }
+.featured-video figcaption { color: var(--muted); font-size: 13px; margin-top: 9px; text-align: center; }
 
 @media (max-width: 760px) {
   .paper-hero { padding: 42px 20px 34px; }
@@ -27,5 +25,4 @@
   .affiliation-line { font-size: 11px; line-height: 1.55; }
   .hero-actions { margin-top: 20px; }
   .overview-section { padding-top: 18px; }
-  .video-grid { grid-template-columns: 1fr; gap: 20px; }
 }

@@ -12,6 +12,7 @@
 /* The framework is introduced immediately after the hero; do not repeat it in Method. */
 #method .paper-figure.wide { display: none; }
 #method .pipeline-grid { border-top: 1px solid var(--line); padding-top: 30px; margin-top: 24px; }
+.action-button.muted { color: #7c8994; background: #f5f7f8; border-color: #dce3e8; cursor: default; }
 
 @media (max-width: 760px) {
   .paper-hero { padding: 42px 20px 34px; }

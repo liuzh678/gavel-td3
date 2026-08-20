@@ -1,0 +1,24 @@
+/* Final layout pass: prioritize the framework in the first viewport and avoid duplicate content. */
+@media (min-width: 761px) {
+  .paper-hero { padding: 62px 24px 44px; }
+  .paper-hero h1 { font-size: clamp(38px, 4vw, 58px); max-width: 1180px; }
+  .hero-subtitle { margin: 18px auto; }
+  .author-line { margin: 20px 0 5px; }
+  .hero-actions { margin-top: 22px; }
+  .overview-section { padding-top: 24px; }
+  .overview-figure img { max-height: 480px; }
+}
+
+/* The framework is introduced immediately after the hero; do not repeat it in Method. */
+#method .paper-figure.wide { display: none; }
+#method .pipeline-grid { border-top: 1px solid var(--line); padding-top: 30px; margin-top: 24px; }
+
+@media (max-width: 760px) {
+  .paper-hero { padding: 42px 20px 34px; }
+  .paper-hero h1 { font-size: 30px; line-height: 1.13; }
+  .hero-subtitle { font-size: 16px; margin: 18px auto; }
+  .author-line { font-size: 14px; margin: 20px 0 5px; }
+  .affiliation-line { font-size: 11px; line-height: 1.55; }
+  .hero-actions { margin-top: 20px; }
+  .overview-section { padding-top: 18px; }
+}

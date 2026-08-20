@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="GAVEL-TD3: graph-attention and value-enhanced learning for mapless mobile robot navigation.">
+  <title>GAVEL-TD3 | Mapless Robot Navigation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav><a class="brand" href="#top">GAVEL<span>·</span>TD3</a><div class="navlinks"><a href="#method">Method</a><a href="#results">Results</a><a href="#real-world">Deployment</a><a class="pill" href="https://youtu.be/ebswv-g3jtM" target="_blank" rel="noreferrer">Watch demo ↗</a></div></nav>
+  <main id="top">
+    <section class="hero section">
+      <p class="eyebrow">MAPLESS AUTONOMOUS NAVIGATION · RESEARCH PROJECT</p>
+      <h1>Local sensing.<br><em>Global</em> confidence.</h1>
+      <p class="lead">GAVEL-TD3 turns partial, noisy LiDAR observations into safe and efficient control for mobile robots navigating unfamiliar, cluttered, and dynamic environments.</p>
+      <div class="actions"><a class="button" href="#method">Explore the method <span>↓</span></a><a class="text-link" href="https://youtu.be/ebswv-g3jtM" target="_blank" rel="noreferrer">See the real-world demo ↗</a></div>
+      <div class="hero-grid" aria-label="Research highlights">
+        <article><strong>0.88</strong><span>zero-shot success on BARN</span></article>
+        <article><strong>+38 pp</strong><span>vs. TD3 on unseen maps</span></article>
+        <article><strong>16 / 20</strong><span>real-world successful trials</span></article>
+      </div>
+    </section>
+
+    <section class="problem section"><div><p class="eyebrow">THE CHALLENGE</p><h2>Reactive navigation cannot afford to misunderstand the scene.</h2></div><p>Conventional mapless policies flatten local sensor readings and often miss the relations between nearby obstacles. They can also require extensive exploration before learning safe behaviour. GAVEL-TD3 addresses both limits with structured perception and a training-only motion prior.</p></section>
+
+    <section id="method" class="method section">
+      <p class="eyebrow">METHOD</p><h2>Two complementary ideas,<br>one end-to-end policy.</h2>
+      <div class="method-grid">
+        <article class="card graph-card"><span class="number">01</span><h3>Graph-attention state representation</h3><p>Each LiDAR sector becomes a node. A directed graph and two-layer GAT learn which local obstacle relations matter, while the PCR readout preserves the robot and goal state.</p><div class="diagram graph-diagram"><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><i class="node n5"></i><b class="bot">R</b><svg viewBox="0 0 320 160" aria-hidden="true"><path d="M48 46 L151 28 L255 58 M48 46 L110 122 L255 58 M151 28 L205 128 L110 122 M255 58 L205 128"/></svg></div></article>
+        <article class="card apf-card"><span class="number">02</span><h3>APF-guided value learning</h3><p>An artificial potential field provides reference velocities during early training. An auxiliary critic turns this prior into faster value learning, then naturally yields to learned exploration.</p><div class="diagram field-diagram"><span class="goal">G</span><span class="robot">R</span><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+      </div>
+      <div class="pipeline"><span>LOCAL LIDAR</span><b>→</b><span>BUILD GRAPH</span><b>→</b><span>GAT + PCR</span><b>→</b><span>TD3 POLICY</span><b>→</b><span>VELOCITY COMMANDS</span></div>
+    </section>
+
+    <section id="results" class="results section"><p class="eyebrow">ZERO-SHOT GENERALIZATION</p><div class="result-heading"><h2>Reliable in environments<br>never seen during training.</h2><p>Evaluated on the Benchmark for Autonomous Robot Navigation (BARN), across diverse unseen obstacle layouts.</p></div><div class="bars"><div class="bar-row"><span>GAVEL-TD3</span><div class="track"><i style="width:88%"></i></div><strong>0.88</strong></div><div class="bar-row muted"><span>TD3</span><div class="track"><i style="width:50%"></i></div><strong>0.50</strong></div></div><p class="caption">Success rate on unseen BARN scenarios. GAVEL-TD3 achieves the highest performance, with efficient and stable decision making.</p></section>
+
+    <section id="real-world" class="real section"><div class="real-copy"><p class="eyebrow">REAL-WORLD DEPLOYMENT</p><h2>From simulation<br>to moving people.</h2><p>The learned policy runs on an onboard computer using only local LiDAR sensing. No prior map and no parameter tuning were used in outdoor trials.</p><a class="text-link" href="https://youtu.be/ebswv-g3jtM" target="_blank" rel="noreferrer">Watch the deployment video ↗</a></div><div class="trial-card"><div class="big">16<span>/20</span></div><p>successful trials across four outdoor scenarios</p><div class="scenarios"><span>Structured obstacles</span><span>Unstructured obstacles</span><span>Random perturbations</span><span>Moving pedestrians</span></div></div></section>
+
+    <section class="takeaway section"><p class="eyebrow">TAKEAWAY</p><h2>Structured local perception plus value guidance delivers safer, faster mapless navigation.</h2><p>GAVEL-TD3 combines GAT-based relational reasoning with APF-guided TD3 training to improve convergence, generalization, and real-world robustness.</p></section>
+  </main>
+  <footer><span>GAVEL-TD3</span><span>Graph-Attention-based Value-Enhanced Learning with TD3</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<launch> 
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find multi_robot_scenario)/launch/MID_dynamic4.world"/>
+        <arg name="paused" value="False"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="false"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+      </include>
+     <include file="$(find zzx_run_description)/launch/gazebo.launch">
+     </include>
+</launch>

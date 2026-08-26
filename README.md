@@ -46,8 +46,8 @@ sudo install -m 755 \
 ## 2. Clone and install Python packages
 
 ```bash
-git clone https://github.com/liuzh678/gavel-td3-training.git
-cd gavel-td3-training
+git clone https://github.com/liuzh678/GAVEL-TD3.git
+cd GAVEL-TD3
 
 # Install a CUDA build of PyTorch matching the local driver. This is the
 # command used for the tested CUDA 12.1 environment.
